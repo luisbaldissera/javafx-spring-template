@@ -32,6 +32,7 @@ easily loadable.
 4. Use the Spring context from anywhere in your application to access
    the JavaFX Scene associated with your view and its controller.
 ```java
-Scene myPageScene = App.context().getBean("myPage").getScene();
-MyController myController = App.context().getBean("myPage").getController();
+FXMLView myView = App.context().getBean("myPage");
+Scene myPageScene = myView.getScene();
+MyController myController = myView.getController();
 ```

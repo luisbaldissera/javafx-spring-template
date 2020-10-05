@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     private static ApplicationContext applicationContext;
-    private static Stage primaryStage;
 
     @Override
     public void init() throws Exception {
@@ -17,8 +16,7 @@ public class App extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {        
-        primaryStage = stage;
+    public void start(Stage stage) throws Exception {
         var view = (FXMLView) context().getBean("mainPage");
         stage.setScene(view.getScene());
         stage.setTitle("My Application");
@@ -32,10 +30,6 @@ public class App extends Application {
 
     public static ApplicationContext context() {
         return applicationContext;
-    }
-
-    public static Stage primaryStage() {
-        return primaryStage;
     }
     
 }
