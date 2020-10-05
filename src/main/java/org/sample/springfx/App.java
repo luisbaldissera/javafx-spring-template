@@ -19,7 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {        
         primaryStage = stage;
-        var view = (FXMLView) applicationContext().getBean("mainPage");
+        var view = (FXMLView) context().getBean("mainPage");
         stage.setScene(view.getScene());
         stage.setTitle("My Application");
         stage.show();
@@ -30,7 +30,7 @@ public class App extends Application {
         applicationContext = null;
     }
 
-    public static ApplicationContext applicationContext() {
+    public static ApplicationContext context() {
         return applicationContext;
     }
 
